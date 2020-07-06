@@ -12,6 +12,7 @@ public class KeyController : MonoBehaviour
     private float offsetDisplacement = 1.0f;
 
     private KeyAudioPlayer audioPlayer;
+    private KeyParticleHandler particleHandler;
 
     [SerializeField]
     private AudioSource[] audioSources;
@@ -19,6 +20,7 @@ public class KeyController : MonoBehaviour
     private void Awake()
     {
         audioPlayer = GetComponent<KeyAudioPlayer>();
+        particleHandler = GetComponent<KeyParticleHandler>();
     }
 
     // Start is called before the first frame update
@@ -34,12 +36,12 @@ public class KeyController : MonoBehaviour
         {
             transform.Translate(transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyDown, audioSources[(int)KeyState.DOWN]);
+            particleHandler.PlayParticleSystem();
         }
         else if (Input.GetKeyUp(key))
         {
             transform.Translate(-transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyUp, audioSources[(int)KeyState.UP]);
-
         }
     }
 }

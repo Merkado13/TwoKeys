@@ -26,6 +26,6 @@ public class KeyAudioPlayer : MonoBehaviour
 
     private AudioClip GetRandomAudioFromSet(AudioClip[] set)
     {
-        return set[Random.Range(0, set.Length - 1)];
+        return set[Random.Range(0, set.Length)];
     }
 }

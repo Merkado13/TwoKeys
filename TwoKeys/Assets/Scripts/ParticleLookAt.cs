@@ -11,12 +11,13 @@ public class ParticleLookAt : MonoBehaviour
     private void Awake()
     {
         particleSystem = GetComponent<ParticleSystem>();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     private void LateUpdate()
