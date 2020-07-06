@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private AudioSet[] audioSets;
+
+    [SerializeField]
+    private GUIController controller;
+
+    [SerializeField]
+    private int numPulsations = 0;
 
     private void Awake()
     {
@@ -26,5 +33,12 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ShiftNumPulsationsByAmount(int amount)
+    {
+        numPulsations += amount;
+        Mathf.Clamp(numPulsations, 0, 1000000);
+        controller.SetCounterTo(numPulsations);
     }
 }

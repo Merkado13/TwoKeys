@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 enum KeyState {UP, DOWN}
@@ -19,9 +20,7 @@ public class KeyController : MonoBehaviour
     [SerializeField]
     private CameraShaking cameraShaking;
     [SerializeField]
-    private float shakeDuration = 1.0f;
-    [SerializeField]
-    private float shakeMagnitude = 1.0f;
+    private SharedKeyData keyData;
 
     [SerializeField]
     private GameObject model;
@@ -46,12 +45,13 @@ public class KeyController : MonoBehaviour
             model.transform.Translate(transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyDown, audioSources[(int)KeyState.DOWN]);
             particleHandler.PlayParticleSystem();
-            StartCoroutine(cameraShaking.Shake(shakeDuration, shakeMagnitude));
+            StartCoroutine(cameraShaking.Shake(keyData.shakeDuration, keyData.shakeMagnitude));
         }
         else if (Input.GetKeyUp(key))
         {
             model.transform.Translate(-transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyUp, audioSources[(int)KeyState.UP]);
+            GameController.current.ShiftNumPulsationsByAmount(keyData.incrPulsations);
         }
     }
 }
