@@ -16,6 +16,12 @@ public class KeyController : MonoBehaviour
 
     [SerializeField]
     private AudioSource[] audioSources;
+    [SerializeField]
+    private CameraShaking cameraShaking;
+    [SerializeField]
+    private float shakeDuration = 1.0f;
+    [SerializeField]
+    private float shakeMagnitude = 1.0f;
 
     [SerializeField]
     private GameObject model;
@@ -40,6 +46,7 @@ public class KeyController : MonoBehaviour
             model.transform.Translate(transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyDown, audioSources[(int)KeyState.DOWN]);
             particleHandler.PlayParticleSystem();
+            StartCoroutine(cameraShaking.Shake(shakeDuration, shakeMagnitude));
         }
         else if (Input.GetKeyUp(key))
         {
