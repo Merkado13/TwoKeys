@@ -6,6 +6,8 @@ public class KeyController : MonoBehaviour
 {
     [SerializeField]
     private KeyCode key;
+    [SerializeField]
+    private float offsetDisplacement = 1.0f;
 
     private void Awake()
     {
@@ -23,11 +25,11 @@ public class KeyController : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
-            transform.Translate(transform.forward * 1, Space.World);
+            transform.Translate(transform.forward * offsetDisplacement, Space.World);
         }
         else if (Input.GetKeyUp(key))
         {
-            transform.Translate(-transform.forward * 1, Space.World);
+            transform.Translate(-transform.forward * offsetDisplacement, Space.World);
 
         }
     }
