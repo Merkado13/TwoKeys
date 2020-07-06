@@ -301,6 +301,16 @@ PrefabInstance:
       propertyPath: cameraShaking
       value: 
       objectReference: {fileID: 1197892937}
+    - target: {fileID: 4742121308495919220, guid: e8472aba99403b0429d097a658ed6c12,
+        type: 3}
+      propertyPath: shakeDuration
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742121308495919220, guid: e8472aba99403b0429d097a658ed6c12,
+        type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 4742121308495919223, guid: e8472aba99403b0429d097a658ed6c12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,6 +956,16 @@ PrefabInstance:
       propertyPath: cameraShaking
       value: 
       objectReference: {fileID: 1197892937}
+    - target: {fileID: 4742121308495919220, guid: e8472aba99403b0429d097a658ed6c12,
+        type: 3}
+      propertyPath: shakeDuration
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742121308495919220, guid: e8472aba99403b0429d097a658ed6c12,
+        type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 4742121308495919223, guid: e8472aba99403b0429d097a658ed6c12,
         type: 3}
       propertyPath: m_LocalPosition.x
