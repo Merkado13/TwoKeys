@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum KeyState {UP, DOWN}
+
 public class KeyController : MonoBehaviour
 {
     [SerializeField]
@@ -9,9 +11,14 @@ public class KeyController : MonoBehaviour
     [SerializeField]
     private float offsetDisplacement = 1.0f;
 
+    private KeyAudioPlayer audioPlayer;
+
+    [SerializeField]
+    private AudioSource[] audioSources;
+
     private void Awake()
     {
-
+        audioPlayer = GetComponent<KeyAudioPlayer>();
     }
 
     // Start is called before the first frame update
@@ -26,10 +33,12 @@ public class KeyController : MonoBehaviour
         if (Input.GetKeyDown(key))
         {
             transform.Translate(transform.forward * offsetDisplacement, Space.World);
+            audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyDown, audioSources[(int)KeyState.DOWN]);
         }
         else if (Input.GetKeyUp(key))
         {
             transform.Translate(-transform.forward * offsetDisplacement, Space.World);
+            audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyUp, audioSources[(int)KeyState.UP]);
 
         }
     }
