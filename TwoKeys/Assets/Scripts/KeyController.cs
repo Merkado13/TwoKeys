@@ -17,6 +17,9 @@ public class KeyController : MonoBehaviour
     [SerializeField]
     private AudioSource[] audioSources;
 
+    [SerializeField]
+    private GameObject model;
+
     private void Awake()
     {
         audioPlayer = GetComponent<KeyAudioPlayer>();
@@ -34,13 +37,13 @@ public class KeyController : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
-            transform.Translate(transform.forward * offsetDisplacement, Space.World);
+            model.transform.Translate(transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyDown, audioSources[(int)KeyState.DOWN]);
             particleHandler.PlayParticleSystem();
         }
         else if (Input.GetKeyUp(key))
         {
-            transform.Translate(-transform.forward * offsetDisplacement, Space.World);
+            model.transform.Translate(-transform.forward * offsetDisplacement, Space.World);
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyUp, audioSources[(int)KeyState.UP]);
         }
     }
