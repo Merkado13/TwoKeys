@@ -8,7 +8,7 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     private EventQueue eventQueue;
 
-    private EventQueue.PulsationEvent currentEvent;
+    private EventData currentEvent;
 
     private GameController gameController; 
     private void Awake()

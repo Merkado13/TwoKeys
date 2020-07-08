@@ -12,6 +12,9 @@ namespace TMPro.Examples
         public float SpeedMultiplier = 1.0f;
         public float CurveScale = 1.0f;
 
+        public int initChar = -1;
+        public int endChar = -1;
+
         private TMP_Text m_TextComponent;
         private bool hasTextChanged;
 
@@ -44,7 +47,7 @@ namespace TMPro.Examples
 
         void Start()
         {
-            StartCoroutine(AnimateVertexColors());
+            StartCoroutine(AnimateJitterVertex());
         }
 
 
@@ -58,7 +61,7 @@ namespace TMPro.Examples
         /// Method to animate vertex colors of a TMP Text object.
         /// </summary>
         /// <returns></returns>
-        IEnumerator AnimateVertexColors()
+        IEnumerator AnimateJitterVertex()
         {
 
             // We force an update of the text object since it would only be updated at the end of the frame. Ie. before this code is executed on the first frame.
@@ -97,14 +100,14 @@ namespace TMPro.Examples
                 int characterCount = textInfo.characterCount;
 
                 // If No Characters then just yield and wait for some text to be added
-                if (characterCount == 0)
+                if (characterCount < initChar && initChar != -1)
                 {
                     yield return new WaitForSeconds(0.25f);
                     continue;
                 }
 
 
-                for (int i = 0; i < characterCount; i++)
+                for (int i = initChar; i < endChar; i++)
                 {
                     TMP_CharacterInfo charInfo = textInfo.characterInfo[i];
 

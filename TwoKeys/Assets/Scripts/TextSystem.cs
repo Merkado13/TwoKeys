@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class TextSystem : MonoBehaviour
 {
+   
+    private TMP_Animated textBox;
+
     [SerializeField]
-    private TextMeshProUGUI textBox;
+    private GameObject tmpPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //GameObject tmpObject = Instantiate(tmpPrefab);
+        //textBox = tmpObject.GetComponent<TMP_Animated>();
     }
 
     // Update is called once per frame
@@ -22,12 +26,17 @@ public class TextSystem : MonoBehaviour
 
     public void PrintText(string text)
     {
-        StartCoroutine(ParseText(text));
+        if (!textBox)
+        {
+            Debug.Log("No lo encuentro");
+            textBox = GameObject.Find("TextBox").GetComponent<TMP_Animated>();
+        }
+        textBox.ReadText(text);
     }
 
-    private IEnumerator ParseText(string text)
+    public void Hola()
     {
-        textBox.text = text;
-        yield return null;
+        Debug.Log("jhjh");
     }
+
 }

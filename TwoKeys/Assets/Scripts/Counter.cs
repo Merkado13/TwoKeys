@@ -19,6 +19,9 @@ public class Counter : MonoBehaviour
     [SerializeField]
     private Transform targetPopUpText;
 
+    [SerializeField]
+    private GameObject canvas;
+
     private const string counterInit = "000000";
 
     // Start is called before the first frame update
@@ -48,7 +51,7 @@ public class Counter : MonoBehaviour
 
     private void PopUpIncrText()
     {
-        GameObject popUpText = Instantiate(popUpTextPrefab, targetPopUpText.transform.localPosition, Quaternion.identity, transform);
+        GameObject popUpText = Instantiate(popUpTextPrefab, targetPopUpText.transform.localPosition, Quaternion.identity, canvas.transform);
         PopUpText popUp = popUpText.GetComponent<PopUpText>();
         if(keyData.incrPulsations > 0)
         {

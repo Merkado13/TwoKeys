@@ -5,21 +5,14 @@ using UnityEngine.Events;
 
 public class EventQueue : MonoBehaviour
 {
-    [System.Serializable]
-    public class PulsationEvent
-    {
-        public int numPulsations;
-        public UnityEvent pulsationEvent;
-    }
-
     [SerializeField]
-    private List<PulsationEvent> eventList = new List<PulsationEvent>();
+    private List<EventData> eventList = new List<EventData>();
 
-    public Queue<PulsationEvent> eventQueue;
+    public Queue<EventData> eventQueue;
 
     private void OnEnable()
     {
-        eventQueue = new Queue<PulsationEvent>(eventList);
+        eventQueue = new Queue<EventData>(eventList);
     }
 
     private void Awake()
