@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d24e73e5203ab4a81e8f3ff648c41e, type: 3}
   m_Name: 20Pulsations
   m_EditorClassIdentifier: 
-  numPulsations: 20
+  numPulsations: 30
   pulsationEvent:
     m_PersistentCalls:
       m_Calls:
