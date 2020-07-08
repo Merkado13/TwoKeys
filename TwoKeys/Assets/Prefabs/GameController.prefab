@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 580608370150289816}
   - component: {fileID: 1612551053777991483}
+  - component: {fileID: 4630776977920973421}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -45,3 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAudioSet: {fileID: 0}
   audioSets: []
+  controller: {fileID: 0}
+  numPulsations: 0
+--- !u!114 &4630776977920973421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825211196120088033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ebf9c5e00856c428738c5e4d3c7218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
