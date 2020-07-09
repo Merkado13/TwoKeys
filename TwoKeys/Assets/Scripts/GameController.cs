@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -8,6 +9,7 @@ public class GameController : MonoBehaviour
 
     public static GameController current;
     public AudioSet currentAudioSet;
+    public TMP_Animated textBox;
 
     [SerializeField]
     private AudioSet[] audioSets;

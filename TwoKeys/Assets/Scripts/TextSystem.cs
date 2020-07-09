@@ -26,11 +26,7 @@ public class TextSystem : MonoBehaviour
 
     public void PrintText(string text)
     {
-        if (!textBox)
-        {
-            Debug.Log("No lo encuentro");
-            textBox = GameObject.Find("TextBox").GetComponent<TMP_Animated>();
-        }
+        textBox = GameController.current.textBox;
         textBox.ReadText(text);
     }
 
