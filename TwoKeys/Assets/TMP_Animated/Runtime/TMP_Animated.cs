@@ -25,6 +25,7 @@ namespace TMPro
         public DialogueEvent onDialogueFinish;
 
         public VertexJitter vertexJitter;
+        public FadeOut fader;
 
         public void ReadText(string newText)
         {
@@ -81,7 +82,8 @@ namespace TMPro
                     }
                     subCounter++;
                 }
-                yield return null;
+
+                yield return fader.FadeOutTextAdaptative();
 
                 WaitForSeconds EvaluateTag(string tag)
                 {
@@ -119,6 +121,7 @@ namespace TMPro
                     }
                     return null;
                 }
+
                 onDialogueFinish.Invoke();
             }
         }
