@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GUIController controller;
 
-    public int numPulsations { get; private set; }
+    public int numPulsations;
 
     private void Awake()
     {

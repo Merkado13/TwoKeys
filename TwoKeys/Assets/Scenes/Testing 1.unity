@@ -783,6 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f375795003001f34786b05eb1ad005f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyData: {fileID: 816587961}
 --- !u!114 &906201526 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8124250148610568644, guid: e1e4ed5e164fc0445a8bc4af0d49460b,
@@ -2617,6 +2618,11 @@ PrefabInstance:
       propertyPath: counter
       value: 
       objectReference: {fileID: 464197707}
+    - target: {fileID: 5479940930836135386, guid: d13c93581473ea34f94af8ae09352488,
+        type: 3}
+      propertyPath: cifras
+      value: 
+      objectReference: {fileID: 854841948}
     - target: {fileID: 5479940930836135387, guid: d13c93581473ea34f94af8ae09352488,
         type: 3}
       propertyPath: m_LocalPosition.x
