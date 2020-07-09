@@ -57,6 +57,7 @@ namespace TMPro
 
             IEnumerator Read()
             {
+                AudioSource audioPlayer = GetComponent<AudioSource>();
                 int subCounter = 0;
                 int visibleCounter = 0;
                 while (subCounter < subTexts.Length)
@@ -70,6 +71,7 @@ namespace TMPro
                     {
                         while (visibleCounter < subTexts[subCounter].Length)
                         {
+                            audioPlayer.Play();
                             onTextReveal.Invoke(subTexts[subCounter][visibleCounter]);
                             visibleCounter++;
                             maxVisibleCharacters++;
