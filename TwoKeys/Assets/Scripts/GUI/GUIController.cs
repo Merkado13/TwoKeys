@@ -9,9 +9,6 @@ public class GUIController : MonoBehaviour
     [SerializeField]
     private Counter counter;
 
-    [SerializeField]
-    private Cifra1 cifras;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +24,5 @@ public class GUIController : MonoBehaviour
     public void SetCounterTo(int amount)
     {
         counter.ChangeCounterTextToNumber(amount);
-        cifras.ShiftCounter();
     }
 }
