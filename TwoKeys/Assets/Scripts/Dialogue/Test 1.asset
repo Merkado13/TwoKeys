@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d24e73e5203ab4a81e8f3ff648c41e, type: 3}
-  m_Name: 20Pulsations
+  m_Script: {fileID: 11500000, guid: 044ee719f19277e46b78344221670969, type: 3}
+  m_Name: Test 1
   m_EditorClassIdentifier: 
-  numPulsations: 20
-  dialogue: {fileID: 11400000, guid: 39a34a0368df4134c921df752fae92d0, type: 2}
-  pulsationEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  texts:
+  - "Yo me enamor\xE9 de ti"
+  - por culpa de<pause=0,7> los carnavales

@@ -1372,18 +1372,19 @@ MonoBehaviour:
   onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1750328383}
-        m_MethodName: StartFading
-        m_Mode: 4
+      - m_Target: {fileID: 1363399531}
+        m_MethodName: PrintNextText
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 2
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   vertexJitter: {fileID: 1750328382}
+  fader: {fileID: 1750328383}
 --- !u!222 &1750328380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1410,7 +1411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: 131}
+  m_AnchoredPosition: {x: -169, y: 145.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750328382
@@ -1446,6 +1447,7 @@ MonoBehaviour:
   text: {fileID: 1750328379}
   fadeOutSpeed: 2
   destroyable: 0
+  charactersPerFadeSecond: 60
 --- !u!82 &1750328384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1566,8 +1568,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866594576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.88, y: -3.2828045, z: 37.248398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.907, y: -3.4262, z: 37.938}
+  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
   m_Children:
   - {fileID: 1075750453}
   m_Father: {fileID: 0}
@@ -1735,7 +1737,7 @@ PrefabInstance:
     - target: {fileID: 154808692418849137, guid: 1dabf8f04aa9ed249831c89dbdaf8fa4,
         type: 3}
       propertyPath: onDialogueFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartFading
+      value: PrintNextText
       objectReference: {fileID: 0}
     - target: {fileID: 154808692418849137, guid: 1dabf8f04aa9ed249831c89dbdaf8fa4,
         type: 3}
@@ -1766,6 +1768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 154808692418849140, guid: 1dabf8f04aa9ed249831c89dbdaf8fa4,
+        type: 3}
+      propertyPath: endChar
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 154808692418849143, guid: 1dabf8f04aa9ed249831c89dbdaf8fa4,
         type: 3}
@@ -1830,7 +1837,7 @@ PrefabInstance:
     - target: {fileID: 154808692418849143, guid: 1dabf8f04aa9ed249831c89dbdaf8fa4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 131
+      value: 145.4
       objectReference: {fileID: 0}
     - target: {fileID: 154808692418849143, guid: 1dabf8f04aa9ed249831c89dbdaf8fa4,
         type: 3}

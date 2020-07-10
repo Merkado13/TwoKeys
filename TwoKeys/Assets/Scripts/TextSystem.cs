@@ -11,6 +11,9 @@ public class TextSystem : MonoBehaviour
     [SerializeField]
     private GameObject tmpPrefab;
 
+    private DialogueData currentDialogue;
+    private int currentIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +27,17 @@ public class TextSystem : MonoBehaviour
         
     }
 
-    public void PrintText(string text)
+    public void SetDialogue(DialogueData dialogue)
     {
         textBox = GameController.current.textBox;
-        textBox.ReadText(text);
+        currentDialogue = dialogue;
+        currentIndex = 0;
+    }
+
+    public void PrintNextText()
+    {    
+        if(currentIndex < currentDialogue.texts.Length)
+            textBox.ReadText(currentDialogue.texts[currentIndex++]);
     }
 
     public void Hola()

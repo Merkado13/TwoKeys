@@ -8,5 +8,13 @@ using UnityEngine.Events;
 public class EventData : ScriptableObject
 {
     public int numPulsations;
+    public DialogueData dialogue;
     public UnityEvent pulsationEvent;
+
+    public void Perform()
+    {
+        GameController.current.textSystem.SetDialogue(dialogue);
+        GameController.current.textSystem.PrintNextText();
+        pulsationEvent.Invoke();
+    }
 }

@@ -11,6 +11,8 @@ public class FadeOut : MonoBehaviour
     public float fadeOutSpeed = 1.0f;
     public bool destroyable = true;
 
+    public float charactersPerFadeSecond = 60.0f;
+
     public void StartFading(float delayTime)
     {
         if (delayTime > 0)
@@ -25,9 +27,8 @@ public class FadeOut : MonoBehaviour
 
     public IEnumerator FadeOutText()
     {
-
         float alpha = 1.0f;
-
+        
         while (alpha > 0.0f)
         {
             alpha -= fadeOutSpeed * Time.deltaTime;
@@ -52,8 +53,16 @@ public class FadeOut : MonoBehaviour
         yield return FadeOutText();
     }
 
+    public IEnumerator FadeOutTextAdaptative()
+    {
+        float delayTime = text.text.Length / charactersPerFadeSecond;
+        yield return FadeOutText(delayTime);
+
+    }
+
     private void OnDisable()
     {
+
         Destroy(this.gameObject);
     }
 }

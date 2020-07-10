@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public static GameController current;
     public AudioSet currentAudioSet;
     public TMP_Animated textBox;
+    public TextSystem textSystem;
 
     [SerializeField]
     private AudioSet[] audioSets;
