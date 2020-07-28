@@ -13,18 +13,7 @@ MonoBehaviour:
   m_Name: 10Pulsations
   m_EditorClassIdentifier: 
   numPulsations: 10
+  dialogue: {fileID: 11400000, guid: 2186f89d2d2839c4897f76250c799d57, type: 2}
   pulsationEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1689144094722880450, guid: a7dd82b6007ddeb4a96720b5af1c1fc2,
-          type: 3}
-        m_MethodName: PrintText
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 'jajaja '
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

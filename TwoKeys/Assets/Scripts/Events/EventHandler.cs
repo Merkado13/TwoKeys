@@ -29,7 +29,7 @@ public class EventHandler : MonoBehaviour
         if (currentEvent != null) { 
             if (gameController.numPulsations >= currentEvent.numPulsations)
             {
-                currentEvent.pulsationEvent.Invoke();
+                currentEvent.Perform();
                 if (eventQueue.eventQueue.Count > 0)
                     currentEvent = eventQueue.eventQueue.Dequeue();
                 else

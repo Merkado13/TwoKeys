@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -8,6 +9,8 @@ public class GameController : MonoBehaviour
 
     public static GameController current;
     public AudioSet currentAudioSet;
+    public TMP_Animated textBox;
+    public TextSystem textSystem;
 
     [SerializeField]
     private AudioSet[] audioSets;
@@ -15,7 +18,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GUIController controller;
 
-    public int numPulsations { get; private set; }
+    public int numPulsations;
 
     private void Awake()
     {

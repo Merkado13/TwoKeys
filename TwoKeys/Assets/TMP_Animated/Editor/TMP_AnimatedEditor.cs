@@ -12,6 +12,7 @@ namespace TMPro.EditorUtilities
         SerializedProperty speedProp;
         SerializedProperty endDialogueProp;
         SerializedProperty jitterProp;
+        SerializedProperty fadeProp;
 
         protected override void OnEnable()
         {
@@ -19,6 +20,7 @@ namespace TMPro.EditorUtilities
             speedProp = serializedObject.FindProperty("speed");
             endDialogueProp = serializedObject.FindProperty("onDialogueFinish");
             jitterProp = serializedObject.FindProperty("vertexJitter");
+            fadeProp = serializedObject.FindProperty("fader");
         }
         protected override void OnUndoRedo()
         {
@@ -29,6 +31,7 @@ namespace TMPro.EditorUtilities
             EditorGUILayout.PropertyField(speedProp, new GUIContent("     Default Speed"));
             EditorGUILayout.PropertyField(endDialogueProp);
             EditorGUILayout.PropertyField(jitterProp);
+            EditorGUILayout.PropertyField(fadeProp);
 
         }
         protected override bool IsMixSelectionTypes()
