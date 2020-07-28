@@ -14,6 +14,7 @@ public class KeyController : MonoBehaviour
 
     private KeyAudioPlayer audioPlayer;
     private KeyParticleHandler particleHandler;
+    private Vector3 originalPos;
 
     [SerializeField]
     private AudioSource[] audioSources;
@@ -29,6 +30,7 @@ public class KeyController : MonoBehaviour
     {
         audioPlayer = GetComponent<KeyAudioPlayer>();
         particleHandler = GetComponent<KeyParticleHandler>();
+        originalPos = transform.position;
     }
 
     // Start is called before the first frame update
@@ -42,14 +44,14 @@ public class KeyController : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
-            model.transform.Translate(transform.forward * offsetDisplacement, Space.World);
+            model.transform.position = originalPos + transform.forward * offsetDisplacement;
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyDown, audioSources[(int)KeyState.DOWN]);
             particleHandler.PlayParticleSystem();
             StartCoroutine(cameraShaking.Shake(keyData.shakeDuration, keyData.shakeMagnitude));
         }
         else if (Input.GetKeyUp(key))
         {
-            model.transform.Translate(-transform.forward * offsetDisplacement, Space.World);
+            model.transform.position = originalPos;
             audioPlayer.PlayAudioFrom(GameController.current.currentAudioSet.audiosKeyUp, audioSources[(int)KeyState.UP]);
             GameController.current.ShiftNumPulsationsByAmount(keyData.incrPulsations);
         }
